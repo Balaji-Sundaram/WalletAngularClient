@@ -33,7 +33,11 @@ pin:number=0;
     wallet.subscribe(
       {
         next:(data)=>{console.log(data);},
-        error:(error)=>{window.alert(JSON.stringify(error));},
+        error:(error)=>{
+         let index = JSON.stringify(error).indexOf("error");
+         window.alert(JSON.stringify(error).slice(index+8,-2))
+          console.log(JSON.stringify(error));
+          },
         complete:()=>{
           window.alert("Funds Transfered");
           console.log("Funds Transfered");

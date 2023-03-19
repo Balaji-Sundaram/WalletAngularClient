@@ -28,17 +28,6 @@ export class WithDrawComponent implements OnInit{
   pin:number=0;
   amount:number=0;
   withdraw() {
-    // @ts-ignore
-    if (this.Walletmap.get(this.id).fundTransferPin != this.pin) {
-      window.alert("Wrong PIN !!!!!!!!");
-    }
-
-    // @ts-ignore
-   else if (this.Walletmap.get(this.id).balance < this.amount) {
-      window.alert("Insufficient Funds..!!!");
-    }
-
-    else {
       let wallet: Observable<any> = this.walletdbService.withDraw(this.id, this.pin, this.amount);
       wallet.subscribe(
         {
@@ -46,7 +35,9 @@ export class WithDrawComponent implements OnInit{
             console.log(data);
           },
           error: (error) => {
-            window.alert(error + " \n" + JSON.stringify(error));
+            let index = JSON.stringify(error).indexOf("error");
+            window.alert(JSON.stringify(error).slice(index+8,-2))
+            console.log(JSON.stringify(error));
           },
           complete: () => {
             window.alert("Funds Withdraw Successfully");
@@ -60,6 +51,5 @@ export class WithDrawComponent implements OnInit{
       )
 
     }
-  }
 
 }
