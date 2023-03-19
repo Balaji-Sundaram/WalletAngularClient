@@ -1,0 +1,19 @@
+<h1>
+  &nbsp;Admin Page
+</h1>
+<br>
+<body>
+<form autocomplete="off">
+  <label for="uname" >UserName :</label>
+  <input type="text" id="uname" name="uname" [(ngModel)]="uname">
+  <br>
+  <br>
+  <label for="password">Password &nbsp;&nbsp;:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password">
+  <br>
+  <button type="button"(click)="admin()" value="Create">LogIN</button>
+  <br>
+
+</form>
+<router-outlet></router-outlet>
+</body>

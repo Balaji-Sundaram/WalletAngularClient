@@ -1,0 +1,38 @@
+<h1>Welcome
+  <div class="name">
+    {{userName|uppercase}}
+  </div>
+</h1>
+<body>
+<nav>
+  <ul>
+
+    <li> <a routerLink="mypage">🏡MyPage</a> </li>
+    <li>  <a routerLink="addFunds">AddFunds</a></li>
+    <li>  <a routerLink="fundTransfer">Fund Transfer</a></li>
+    <li> <a routerLink="withDraw">Withdraw</a> </li>
+    <li>  <a routerLink="updateWallet">Update</a></li>
+    <li>  <a class="delete" routerLink="deleteWallet">DELETE</a></li>
+    <li class="log">  <button class="logout"  (click)="logout()">LogOUT !</button> </li>
+<!--    <li > <a class="logout" routerLink="/Login">Logout !</a> </li>-->
+<br>
+ <br>
+<!--    <li>-->
+<!--      -->
+<!--      <button  (click)="mypage()" > Home</button>-->
+
+<!--      <button (click)="addFunds()">AddFunds</button>-->
+<!--    </li>-->
+<!--    <li> <button (click)="fundTransfer()">Fund Transfer</button></li>-->
+<!--  <li> <button (click)="withDraw()">Withdraw</button></li>-->
+<!--    <li><button (click)="updateWallet()">Update</button></li>-->
+<!--   <li> <button class="delete" (click)="deleteWallet()">DELETE</button></li>-->
+<!--    <li ><button class="logout" (click)="logout()">Logout !</button> </li>-->
+    <router-outlet></router-outlet>
+  </ul>
+</nav>
+<br>
+</body>
+
+
+

@@ -1,0 +1,23 @@
+<br>
+<br>
+<br>
+<br>
+<h1>
+  &nbsp;WithDraw
+</h1>
+
+<body>
+<form autocomplete="on">
+  <br>
+  <label>ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:&nbsp;&nbsp;&nbsp;&emsp;{{id}}</label>
+  <br><br>
+  <label for="amount">Amount&emsp;:</label>
+  <input type="number" [(ngModel)]= "amount" name="amount" id="amount">
+  <br><br>
+  <label for="pin">Pin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:</label>
+  <input type="number" [(ngModel)]= "pin" name="pin" id="pin">
+  <br>
+  <button type="button"(click)="withdraw()" value="Create">WithDraw</button>
+  <br>
+</form>
+</body>

@@ -1,0 +1,58 @@
+h1{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  background: #000022;
+  color: cornsilk;
+  border-radius: 12px;
+  font-family: "Century Gothic",sans-serif;
+}
+h2{
+  margin-top: 2px;
+  background-color: #000022;
+  display: flex;
+ justify-content: center;
+  font-family: "Bookman Old Style", sans-serif;
+  font-size: 45px;
+  border: 3px solid antiquewhite;
+  border-radius: 60px;
+  margin-bottom: 3px;
+}
+li{
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+
+button,a{
+
+  color: #000022;
+  text-align: center;
+  padding: 14px 16px;
+  margin-left: auto;
+  margin-right: 20px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  font-size: 30px;
+  text-decoration: none;
+  border-radius: 60px;
+  border: 2px solid gold;
+  margin-bottom: 20px;
+}
+.deleteion:hover{
+   background-color: red;
+  color: antiquewhite;
+
+}
+.cancel:hover{
+  background-color: greenyellow;
+  color: #000022;
+}
+footer{
+ display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  background-color: red;
+  color: azure;
+  border-radius: 12px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  font-size: 18px;
+}

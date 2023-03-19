@@ -1,0 +1,71 @@
+import { Component } from '@angular/core';
+import {WalletDto} from "../../dto/WalletDto";
+import {ServiceComponent} from "../service/service.component";
+import {WalletDbServiceService} from "../service/wallet-db-service.service";
+import {Observable} from "rxjs";
+import {LoginComponent} from "../login/login.component";
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-Create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.css']
+})
+export class CreateComponent {
+ error:string="Please fill it"
+  title = '🤩 Create a Free Wallet Here 👇 ';
+  footer = '© Copyright 2023    PRIME Wallet,    All Rights Reserved   ';
+  wallet:WalletDto= new WalletDto();
+
+  constructor(private service:ServiceComponent, private walletdbservice:WalletDbServiceService,private router:Router ) {
+  }
+
+
+  display(){
+  // @ts-ignore
+    let finder:Observable<any> = this.walletdbservice.findWalletbyId(this.wallet.id);
+    finder.subscribe(
+      {
+        next:(data)=>{
+          console.log(data);
+       if(data.length==0){
+            if(this.wallet.id != null &&this.wallet.name != null && this.wallet.eMail != null && this.wallet.password != null && this.wallet.fundTransferPin != null && this.wallet.password.length==8){
+           let walletPost: Observable<any> = this.walletdbservice.addWallet(this.wallet);   // if you want to subscribe the wallet you can add that
+           walletPost.subscribe(
+             {
+               next:(data)=>{console.log(data);},
+               error:(error)=>{window.alert(JSON.stringify(error));},
+               complete:()=>{
+                 window.alert("Wallet Created Successfully\n" +
+                   "                      Redirecting to Login Page");
+                 console.log("Posted");
+                 this.router.navigate(['Login']);
+               }
+             }
+           )
+         }
+
+         else {
+           window.alert("Check the Entered Values  \n it not be Null \n Password Must Contain 8 char not more and not less\n  Id must contain 6 digits")
+         }
+
+       }
+       else{
+         window.alert("Id Already Available");
+         console.log("full");
+       }
+          }
+      }
+    )
+
+
+//
+
+
+
+    //this.service.addWalletServ(this.wallet);
+
+  };
+
+
+}

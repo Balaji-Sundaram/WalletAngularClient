@@ -1,0 +1,53 @@
+
+
+
+
+<h1>
+  {{title}}
+</h1>
+
+<body>
+
+<form autocomplete="off">
+  <br>
+  <label for="id" >ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:</label>
+
+    <input type="number" [(ngModel)]="wallet.id" #idRef="ngModel"    name="id" maxlength="6" id="id"  pattern="[0-9 ]{6}" title="Only  numbers are allowed, 6 Digits required" required >
+  <br><br>
+  <label for="name">Name&nbsp;&nbsp;&nbsp;&emsp;:</label>
+  <input type="text" [(ngModel)]="wallet.name" name="name" id="name">
+  <br><br>
+  <label for="balance">Balance  &nbsp;&nbsp;&nbsp;:</label>
+  <input type="number"[(ngModel)]="wallet.balance" name="balance" id="balance">
+  <br><br>
+  <label for="gmail">G-Mail &nbsp;&emsp;:</label>
+  <input type="text" [(ngModel)]="wallet.eMail" name="gmail" id="gmail">
+  <br><br>
+
+  <label for="password">Password :</label>
+  <input type="password"[(ngModel)]="wallet.password" #passwordRef ="ngModel"  id="password"name="password"  pattern="[A-Za-z] {8} " title="Required 8 character" required>
+<!--       <dialog *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">-->
+<!--            {{error}}-->
+<!--       </dialog>-->
+
+
+  <br><br>
+
+
+  <label for="fundpin">FTPin &nbsp;&nbsp;&emsp;:</label>
+  <input type="password"[(ngModel)]="wallet.fundTransferPin" name="fundpin" maxlength="4" id="fundpin">
+  <br><br>
+  <label for="date">Date &nbsp;&nbsp;&nbsp;&emsp;:</label>
+  <input type="date" [(ngModel)]="wallet.createdDate" name="date" id="date">
+
+
+  <br>
+  <button type="button"(click)="display()" value="Create">Create</button>
+  <br>
+</form>
+</body>
+<br>
+<footer>
+  {{  footer}}
+</footer>
+

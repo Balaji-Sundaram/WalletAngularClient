@@ -1,0 +1,38 @@
+<br>
+<br>
+<br>
+<br>
+<h1>
+  &nbsp;Update Wallet
+</h1>
+<body>
+
+<form autocomplete="on">
+  <br>
+  <label>ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:&nbsp;&nbsp;&nbsp;&emsp;{{wallet.id}}</label>
+  <br><br>
+
+  <label for="name">Name&nbsp;&nbsp;&nbsp;&emsp;:</label>
+  <input type="text" [(ngModel)]="wallet.name" name="name" id="name">
+  <br><br>
+  <label for="balance">Balance  &nbsp;&nbsp;&nbsp;:</label>
+  <input type="number"[(ngModel)]="wallet.balance" name="balance" id="balance">
+  <br><br>
+  <label for="gmail">G-Mail &nbsp;&emsp;:</label>
+  <input type="text" [(ngModel)]="wallet.eMail" name="gmail" id="gmail">
+  <br><br>
+  <label for="password">Password :</label>
+  <input type="password"[(ngModel)]="wallet.password" #passwordRef ="ngModel"  id="password"name="password"  pattern="[A-Za-z] {8} " title="Required 8 character" required>
+  <br><br>
+  <label for="fundpin">FTPin &nbsp;&nbsp;&emsp;:</label>
+  <input type="password"[(ngModel)]="wallet.fundTransferPin" name="fundpin" maxlength="4" id="fundpin">
+  <br><br>
+  <label for="date">Date &nbsp;&nbsp;&nbsp;&emsp;:</label>
+  <input type="date" [(ngModel)]="wallet.createdDate" name="date" id="date">
+
+
+  <br>
+  <button type="button"(click)="update()" value="update">Update</button>
+  <br>
+</form>
+</body>

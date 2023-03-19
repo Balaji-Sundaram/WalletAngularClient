@@ -1,0 +1,30 @@
+<h1>
+  Welcome to PRIME
+</h1>
+<body>
+<form autocomplete="on">
+  <br>
+  <div>
+    <label for="id" >ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:</label>
+    <input type="number"   [(ngModel)]="login.id" #idnum = "ngModel" name="id" maxlength="6" id="id" required >
+    <div *ngIf ="idnum.invalid &&(idnum.touched||idnum.dirty)">
+      <small class="text-danger">id is required</small>
+    </div>
+
+  </div>
+
+  <br><br>
+  <label for="gmail">G-Mail &nbsp;&emsp;:</label>
+  <input type="text"[(ngModel)]="login.gmail" name="gmail" id="gmail">
+  <br><br><br>
+  <label for="password">Password :</label>
+  <input type="password"[(ngModel)]="login.password" #passwordRef ="ngModel"  id="password"name="password"  pattern="[A-Za-z] {8} " title="Required 8 character" required>
+  <br><br>
+  <button type="button"(click)="getWallet()" value="LogIn">LogIN</button>
+  <br>
+
+</form>
+
+
+
+</body>

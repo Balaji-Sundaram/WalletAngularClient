@@ -1,0 +1,56 @@
+<!--<p>display works!</p>-->
+<!--<h1>-->
+<!--&lt;!&ndash;  {{obs|currency }}&ndash;&gt;-->
+
+<!--All Wallet Account-->
+<!--</h1>-->
+<!--<br>-->
+<!--<select name="query" id="query">-->
+<!--  <option value="Name">Name</option>-->
+<!--  <option value="ID">ID</option>-->
+<!--</select>-->
+<br>
+
+<h1>
+
+   &nbsp; Available Wallets
+
+  <input class="query" type="text" [(ngModel)]="query" id="queryID" name="query">🔍
+</h1>
+
+<div>
+
+<table id="customers">
+
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Gmail</th>
+    <th>Balance</th>
+    <th>Modify</th>
+  </tr>
+
+  <tbody>
+<tr *ngFor="let wallet of walletdto  | search:query">
+  <td>{{wallet.id}}</td>
+  <td>{{wallet.name}}</td>
+  <td>{{wallet.eMail}}</td>
+  <td>{{wallet.balance}}</td>
+  <td class="modify">
+    <input class="admin" type="button"   (click)="update(wallet)" value="Update">
+    <input class="admin" type="button"   (click)="deleteWallet(wallet.id,wallet.eMail,wallet.password)" value="Delete">
+  </td>
+</tr>
+  </tbody>
+</table>
+
+</div>
+<!--<li>  <a routerLink="updateWallet">Update</a></li>-->
+<router-outlet></router-outlet>
+<!-- <ul>-->
+<!--   <li *ngFor="let walletmap of getkeys(Walletmap) ">-->
+<!--       {{getName(walletmap)}}{{ getGmail(walletmap)}}-->
+
+<!--   </li>-->
+<!-- </ul>-->
+

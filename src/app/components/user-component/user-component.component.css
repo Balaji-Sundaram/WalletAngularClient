@@ -1,0 +1,123 @@
+
+
+
+h1{
+  background: #000022;
+  color: aquamarine;
+  border-bottom-left-radius: 12px;
+  margin-top: 0.9px;
+ font-family: "Century Gothic",sans-serif;
+  display: flex;
+  justify-items: center;
+  text-decoration: gold;
+  margin-bottom: 0.9px;
+}
+
+.name{
+
+  display: flex;
+  margin-left: auto;
+  font-size: 25px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+ border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: 5px 18px;
+}
+.name:hover {
+  border:  1px solid  gold;
+  padding: 5px 45px;
+  background: azure;
+  color: #000022;
+}
+
+
+/*ul{*/
+/* margin-right: auto;*/
+/*  margin-left: auto;*/
+/*  width:  fit-content;*/
+/*  list-style-type: none;*/
+/*!*background: antiquewhite;*!*/
+/*!* margin: 25px;*!*/
+/*  padding: 0;*/
+/*  overflow: hidden;*/
+/*  border-bottom-left-radius: 12px;*/
+/*  border-bottom-right-radius: 12px;*/
+
+/*}*/
+
+/*li{*/
+/*  float: left;*/
+/*  display: flex;*/
+/*}*/
+
+/*button{*/
+/*  display: block;*/
+/*  color: aqua;*/
+/*  background: #000022;*/
+/*  text-align: center;*/
+/*  padding: 14px 16px;*/
+/*  margin-left: 10px;*/
+/*  margin-right: 10px;*/
+/*  font-family: "Comic Sans MS", "Script MT Bold", serif;*/
+/*  font-size: 18px;*/
+/*  text-decoration: none;*/
+/*  border-radius: 25px;*/
+/*}*/
+
+/*button:hover {*/
+
+/*  border-radius: 25px;*/
+/*  background-color: aqua;*/
+/*  color: black;*/
+
+/*}*/
+.delete:hover , .logout:hover{
+  border: 3px solid #000022;
+  border-radius: 30px;
+  background-color: red;
+  color: antiquewhite;
+  font-family: "Bookman Old Style", sans-serif;
+}
+
+ul{
+  list-style-type: none;
+  margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+li{
+  float: left;
+}
+
+ a,button {
+  display: block;
+  color: #000022;
+  text-align: center;
+  padding: 14px 16px;
+  margin-left: auto;
+  margin-right: 20px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  text-decoration: none;
+  border-radius: 30px;
+border: 2px solid gold;
+   margin-bottom: 20px;
+}
+button{
+  font-size: 16px;
+}
+a:hover {
+  border-radius: 30px;
+
+  background-color: aqua;
+  color: black;
+
+}
+ body{
+ color: azure;
+ }

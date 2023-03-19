@@ -1,0 +1,76 @@
+/*table {*/
+/*  border-collapse: collapse;*/
+/*  width: 100%;*/
+/*}*/
+
+/*th, td {*/
+/*  padding: 8px;*/
+/*  text-align: left;*/
+/*  border-bottom: 1px solid #ddd;*/
+/*}*/
+
+/*tr:hover {background-color: coral;}*/
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {
+  background-color:rgba(23,3,51,0.69);
+  color: antiquewhite;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000022;
+  color: white;
+}
+h1{
+  background: #000022;
+  color: azure;
+
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-top: 0.9px;
+  font-family: "Bookman Old Style", sans-serif;
+  display: flex;
+ justify-items: center;
+  text-decoration: gold;
+}
+h1:hover {
+  background: azure;
+  color: #000022;
+}
+.query{
+  border:  3px solid  gold;
+  display: flex;
+  margin-left: auto;
+  font-size: 25px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  border-radius: 20px;
+   width: auto;
+  height: auto;
+   color: #000022;;
+}
+.admin{
+  color: aqua;
+background-color: #000022;
+  padding: 14px 16px;
+  border-radius: 30px;
+  border-color: gold;
+  font-weight: bold;
+}
+.admin:hover{
+  color: #000022;
+  background-color: aqua;
+}

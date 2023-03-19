@@ -1,0 +1,80 @@
+
+
+h1{
+  background: #000022;
+  color: azure;
+  margin-top: 0.9px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  font-family: "Comic Sans MS",sans-serif;
+  display: flex;
+  justify-content: center;
+}
+h1:hover{
+  background: azure;
+  color: #000022;
+}
+label{
+  margin-left: 40px;
+  color: azure;
+}
+body{
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  font-size: 20px;
+  background: #000046;
+  width:  fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border: 5px solid cyan;
+  display: flex;
+  justify-content: center;
+}
+
+input{
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 5px;
+  border: 2px solid aquamarine;
+  background: azure;
+  height: 25px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  font-size: 18px;
+
+}
+input:hover{
+  background: aquamarine;
+  border: 2px solid azure;
+}
+button{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: auto;
+  font-size: 18px;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  border: 4px solid black;
+  border-radius: 20px;
+}
+button:hover{
+  border: 4px solid aquamarine;
+  background: black;
+  color: azure;
+
+}
+footer{
+
+  background: aquamarine;
+  color: red;
+  border: 2px solid gold;
+  border-radius: 20px;
+  font-family: "Comic Sans MS",sans-serif;
+  display: flex;
+  justify-content: flex-start;
+}
+p{
+  color: antiquewhite;
+}
+
