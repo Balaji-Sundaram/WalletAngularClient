@@ -29,12 +29,16 @@ export class CreateComponent {
         next:(data)=>{
           console.log(data);
        if(data.length==0){
-            if(this.wallet.id != null &&this.wallet.name != null && this.wallet.eMail != null && this.wallet.password != null && this.wallet.fundTransferPin != null && this.wallet.password.length==8){
+            if(this.wallet.id != null &&this.wallet.name != null && this.wallet.eMail != null && this.wallet.password != null && this.wallet.fundTransferPin != null && this.wallet.password.length==8 && this.wallet.createdDate !=null)  {
            let walletPost: Observable<any> = this.walletdbservice.addWallet(this.wallet);   // if you want to subscribe the wallet you can add that
            walletPost.subscribe(
              {
                next:(data)=>{console.log(data);},
-               error:(error)=>{window.alert(JSON.stringify(error));},
+               error:(error)=>{
+                 let index = JSON.stringify(error).indexOf("error");
+                 window.alert(JSON.stringify(error).slice(index+8,-2))
+                 console.log(JSON.stringify(error));
+                 },
                complete:()=>{
                  window.alert("Wallet Created Successfully\n" +
                    "                      Redirecting to Login Page");
@@ -52,19 +56,11 @@ export class CreateComponent {
        }
        else{
          window.alert("Id Already Available");
-         console.log("full");
+         console.log("Id Already Available");
        }
           }
       }
     )
-
-
-//
-
-
-
-    //this.service.addWalletServ(this.wallet);
-
   };
 
 

@@ -35,10 +35,10 @@ export class LoginComponent {
            next:(data)=>{
             this.service.addWalletServ(data,this.login);
              console.log(data);} ,  // runs when the data is available
-           error:(errormsg)=>{
-             if (errormsg)
-             window.alert(" Check your credentials");
-             console.log(JSON.stringify(errormsg));
+           error:(error)=>{
+               let index = JSON.stringify(error).indexOf("error");
+             window.alert(JSON.stringify(error).slice(index+8,-2))
+             console.log(JSON.stringify(error));
              },
            complete:()=>{console.log("GET request successfully")
 

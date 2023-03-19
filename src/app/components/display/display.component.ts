@@ -45,9 +45,13 @@ this.service.login.password=password;
       this.repo.deleteWallet().subscribe(
         {
           next:(data)=>{
-            window.alert("Wallet Deleted and Good BYE....!");
+            window.alert("Wallet Deleted....!");
             this.ngOnInit();},
-          error:(error)=>{window.alert(JSON.stringify(error));},
+          error:(error)=>{
+            let index = JSON.stringify(error).indexOf("error");
+            window.alert(JSON.stringify(error).slice(index+8,-2))
+            console.log(JSON.stringify(error));
+            },
           complete:()=>{}
         }
       )
