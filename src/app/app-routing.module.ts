@@ -13,6 +13,7 @@ import {WithDrawComponent} from "./components/user-component/with-draw/with-draw
 import {MypageComponent} from "./components/user-component/mypage/mypage.component";
 import {AdminLogComponent} from "./components/display/admin-log/admin-log.component";
 import {AdminUpdateComponent} from "./components/display/admin-update/admin-update.component";
+import {DisplayGuard} from "./components/display/admin-update/guard";
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -20,7 +21,10 @@ const routes: Routes = [
   {path: 'Create', component:CreateComponent},
   {path:'Login',component:LoginComponent},
   {path:'admin-update',component:AdminUpdateComponent},
-  {path:'display',component:DisplayComponent},
+  {
+    path:'display',component:DisplayComponent,
+    canActivate:[DisplayGuard]
+  },
   {
     path:'admin-log',component:AdminLogComponent
     // children:[
