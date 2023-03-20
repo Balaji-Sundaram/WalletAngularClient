@@ -33,11 +33,11 @@ export class LoginComponent {
        walletPost.subscribe(
          {
            next:(data)=>{
-            this.service.addWalletServ(data,this.login);
+            this.service.addWalletServ(data,this.login);  //local storage
              console.log(data);} ,  // runs when the data is available
            error:(error)=>{
                let index = JSON.stringify(error).indexOf("error");
-             window.alert(JSON.stringify(error).slice(index+8,-2))
+             window.alert(JSON.stringify(error).slice(index+8,-2));
              console.log(JSON.stringify(error));
              },
            complete:()=>{console.log("GET request successfully")
