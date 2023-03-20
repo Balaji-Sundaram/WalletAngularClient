@@ -26,7 +26,7 @@ export class AdminUpdateComponent implements OnInit{
   constructor(private service:ServiceComponent, private walletdbservice:WalletDbServiceService,private router:Router ) {
   }
   // @ts-ignore
-  mail:string=this.wallet.eMail
+  mail:string=this.wallet.eMail;
 
 
 
