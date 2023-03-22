@@ -21,7 +21,6 @@
 <div>
 
 <table id="customers">
-
   <tr>
     <th>ID</th>
     <th>Name</th>
@@ -29,7 +28,6 @@
     <th>Balance</th>
     <th>Modify</th>
   </tr>
-
   <tbody>
 <tr *ngFor="let wallet of walletdto  | search:query">
   <td>{{wallet.id}}</td>

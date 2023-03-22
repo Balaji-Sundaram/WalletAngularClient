@@ -47,9 +47,5 @@ export class UpdateWalletComponent implements OnInit{
         }
       }
     )
-
-
-
-
   }
 }

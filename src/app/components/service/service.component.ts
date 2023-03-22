@@ -25,12 +25,15 @@ export class ServiceComponent {
        this.login = newlogin;
      }
 
-     // @ts-ignore
-  getWalletServ(login:LoginDto){
-       if (login.id != null) {
-        return  this.walletMap.get(login.id);
-       }
-     }
+
+  addWallet(newWallet:WalletDto):void{
+    if (newWallet.id != null) {
+      this.walletMap.set(newWallet.id, newWallet);
+    }
+    this.login.id= newWallet.id;
+    this.login.gmail=newWallet.eMail;
+    this.login.password=newWallet.password;
+  }
 
      getAllWallet(){
        return this.walletMap;

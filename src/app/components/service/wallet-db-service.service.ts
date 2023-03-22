@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {WalletDto} from "../../dto/WalletDto";
 import {ServiceComponent} from "./service.component";
@@ -63,7 +63,14 @@ findWalletbyId(id:number):Observable<any>{
   let url:string ="http://localhost:8090/"+id ;
   return  this.httpclient.get(url);
 }
-
+postlogin():Observable<any>{
+    let jwt = sessionStorage.getItem("Prime");
+    var reqHeader =new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization':`Bearer ${jwt}`
+    });
+  return this.httpclient.get("http://localhost:8090/V4/postlogin",{headers:reqHeader});
+}
 
 
 }

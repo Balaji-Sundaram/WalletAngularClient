@@ -26,7 +26,6 @@ export class LoginComponent {
   }
   getWallet(){
     console.log(JSON.stringify(this.login));
-         //  this.walletdbService.getWallet(this.login.gmail,this.login.password,this.login.id);
            let walletPost:Observable<any> = this.walletdbService.login(this.login);
            // subscribe here to observe the value
        walletPost.subscribe(

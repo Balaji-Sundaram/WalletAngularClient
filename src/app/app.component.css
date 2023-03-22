@@ -30,7 +30,8 @@ li{
   float: left;
 }
 
-li a {
+li a  {
+  cursor: pointer;
   display: block;
   color: aqua;
   text-align: center;
