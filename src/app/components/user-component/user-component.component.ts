@@ -11,20 +11,18 @@ import {style} from "@angular/animations";
   templateUrl: './user-component.component.html',
   styleUrls: ['./user-component.component.css']
 })
-
+@Injectable({
+  providedIn:'root'
+})
 
 export class UserComponentComponent implements OnInit {
-
-
   Walletmap = new Map<number,WalletDto>();
   // @ts-ignore
   walletdto = Array.from(this.Walletmap.values());
   constructor(private activatedRoute:ActivatedRoute,private walletdbservice:WalletDbServiceService,private service:ServiceComponent,private router:Router) {
   }
 userName:string="";
-
   ngOnInit():void {
-
     this.Walletmap = this.service.getAllWallet();
     this.walletdto = Array.from(this.Walletmap.values());
     // @ts-ignore
@@ -33,6 +31,7 @@ userName:string="";
     this.walletdto = Array.from(this.Walletmap.values());
     console.log(this.Walletmap)
     this.router.navigate(['mypage'],{relativeTo:this.activatedRoute});
+
   }
 //
 //   mypage(){
@@ -55,6 +54,7 @@ userName:string="";
 //   }
   logout(){
     if(window.confirm("Aru you Sure that You Want to LOGOUT...!")) {
+      sessionStorage.clear();
       this.service.deletetrace();
       this.router.navigate(['Login']);
     }

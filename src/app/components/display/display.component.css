@@ -74,3 +74,18 @@ background-color: #000022;
   color: #000022;
   background-color: aqua;
 }
+.adlog{
+  display: flex;
+  justify-content: center;
+  background-color: #000022;
+  color: antiquewhite;
+  text-decoration: none;
+  font-family: "Comic Sans MS", "Script MT Bold", serif;
+  font-size: 20px;
+  border: 3px solid red;
+  border-radius: 12px;
+}
+.adlog:hover{
+  background-color: antiquewhite;
+  color: red;
+}

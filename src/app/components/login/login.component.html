@@ -7,6 +7,7 @@
   <div>
     <label for="id" >ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:</label>
     <input type="number"   [(ngModel)]="login.id" #idnum = "ngModel" name="id" maxlength="6" id="id" required >
+
     <div *ngIf ="idnum.invalid &&(idnum.touched||idnum.dirty)">
       <small class="text-danger">id is required</small>
     </div>

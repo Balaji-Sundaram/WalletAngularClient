@@ -3,6 +3,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {WalletDto} from "../../dto/WalletDto";
 import {ServiceComponent} from "./service.component";
+import {LoginDto} from "../../dto/LoginDto";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,13 @@ export class WalletDbServiceService {
 
   constructor(private httpclient:HttpClient,private service:ServiceComponent) {
   }
+//version-4 JWT implemented on LOGIN method
+  login(login:LoginDto):Observable<any>{
+    let url:string ="http://localhost:8090/V4/login";
+    return this.httpclient.post(url,login,{responseType:'json'});
+  }
+
+
 
   getWallet(eMail: string | undefined, password: string | undefined, id: number | undefined):Observable<any>{   // it observes on the client side, and it waits to get the data
       let url:string ="http://localhost:8090/getWallet/E-Mail/"+eMail+"/Password/"+password+"/ID/"+id ;
@@ -38,7 +46,6 @@ export class WalletDbServiceService {
   }
 
   updateWallet(wallet:WalletDto):Observable<any>{
-
     // @ts-ignore
     let url:string ="http://localhost:8090/updateWallet/E-Mail/"+this.service.login.gmail+"/Password/"+this.service.login.password;
     return this.httpclient.put(url,wallet);
@@ -56,5 +63,7 @@ findWalletbyId(id:number):Observable<any>{
   let url:string ="http://localhost:8090/"+id ;
   return  this.httpclient.get(url);
 }
+
+
 
 }

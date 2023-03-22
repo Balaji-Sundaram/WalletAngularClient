@@ -14,12 +14,10 @@ export class ServiceComponent {
   //initialize from the login page and this service is used for the  local repository for the user data
   walletMap= new Map<number,WalletDto>();
   login:LoginDto=new LoginDto();
-
   constructor() {
     let date= new Date();
     //this.walletMap.set(125568,new WalletDto(125568,"Maven",2500.0,"Maven@gmail.com","Maven123",date,1234));
   }
-
      addWalletServ(newWallet:WalletDto, newlogin:LoginDto):void{
        if (newWallet.id != null) {
          this.walletMap.set(newWallet.id, newWallet);
