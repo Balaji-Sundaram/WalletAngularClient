@@ -14,6 +14,12 @@ import {MypageComponent} from "./components/user-component/mypage/mypage.compone
 import {AdminLogComponent} from "./components/display/admin-log/admin-log.component";
 import {AdminUpdateComponent} from "./components/display/admin-update/admin-update.component";
 import {DisplayGuard} from "./components/display/admin-update/guard";
+import {UserGuard} from "./components/user-component/UserGuard";
+import {WithDrawGuard} from "./components/user-component/with-draw/WithDrawGuard";
+import {UpdateGuard} from "./components/user-component/update-wallet/UpdateGuard";
+import {FundTfrGuard} from "./components/user-component/fund-transfer/FundTfrGuard";
+import {AddGuard} from "./components/user-component/add-funds/AddGuard";
+import {DeleteGuard} from "./components/user-component/delete-wallet/DeleteGuard";
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -35,12 +41,12 @@ const routes: Routes = [
     path:'user',component:UserComponentComponent,
     children:[
 
-      {path:'mypage',component:MypageComponent},
-      {path:'addFunds',component:AddFundsComponent},
-      {path:'fundTransfer',component:FundTransferComponent},
-      {path:'deleteWallet',component:DeleteWalletComponent},
-      {path:'updateWallet',component:UpdateWalletComponent},
-      {path:'withDraw',component:WithDrawComponent}
+      {path:'mypage',component:MypageComponent,  canActivate:[UserGuard]},
+      {path:'addFunds',component:AddFundsComponent,canActivate:[AddGuard]},
+      {path:'fundTransfer',component:FundTransferComponent,canActivate:[FundTfrGuard]},
+      {path:'deleteWallet',component:DeleteWalletComponent,canActivate:[DeleteGuard]},
+      {path:'updateWallet',component:UpdateWalletComponent,canActivate:[UpdateGuard]},
+      {path:'withDraw',component:WithDrawComponent,canActivate:[WithDrawGuard]}
     ]
 
   },
