@@ -16,25 +16,29 @@ export class DeleteGuard implements CanActivate{
     }
     else{
 
-      this.walletdb.postlogin().subscribe({
-        next:(data)=>{
-          console.log(data);
-          this.service.addWallet(data);
-          this.bool=true;
-          this.router.navigate(['/user/']);
-          return true;
-        },
-        error:(error)=>{
-          window.alert("Session Expired");
-          console.log(JSON.stringify(error));
-          this.router.navigate(['/Login']);
-          return false;
-        },
-        complete:()=>{
-          console.log("request done");
-          return true;
-        }
-      })
+      // this.walletdb.postlogin().subscribe({
+      //   next:(data)=>{
+      //     console.log(data);
+      //     this.service.addWallet(data);
+      //     this.bool=true;
+      //     this.router.navigate(['/user/']);
+      //     return true;
+      //   },
+      //   error:(error)=>{
+      //     window.alert("Session Expired");
+      //     console.log(JSON.stringify(error));
+      //     this.router.navigate(['/Login']);
+      //     return false;
+      //   },
+      //   complete:()=>{
+      //     console.log("request done");
+      //     return true;
+      //   }
+      // })
+
+
+      window.alert("Please LogIN....!");
+      this.router.navigate(['/Login']);
       return false;
     }
   }

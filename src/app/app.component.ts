@@ -32,7 +32,6 @@ export class AppComponent {
        this.fundTfrGuard.bool=true;
        this.addGuard.bool=true;
        this.deleteGuard.bool=true;
-
        this.router.navigate(['/user/mypage']);
      },
      error:(error)=>{
