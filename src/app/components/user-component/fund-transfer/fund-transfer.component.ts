@@ -3,6 +3,7 @@ import {WalletDto} from "../../../dto/WalletDto";
 import {WalletDbServiceService} from "../../service/wallet-db-service.service";
 import {ServiceComponent} from "../../service/service.component";
 import {Observable} from "rxjs";
+import {FundTfrGuard} from "./FundTfrGuard";
 
 @Component({
   selector: 'app-fund-transfer',

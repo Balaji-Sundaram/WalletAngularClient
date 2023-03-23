@@ -32,10 +32,11 @@ export class AppComponent {
        this.fundTfrGuard.bool=true;
        this.addGuard.bool=true;
        this.deleteGuard.bool=true;
+       window.alert("Redirecting to Your Page.......")
        this.router.navigate(['/user/mypage']);
      },
      error:(error)=>{
-       window.alert("Session Expired");
+       // window.alert("Session Expired");
        console.log(JSON.stringify(error));
        this.router.navigate(['/Login']);
      },
