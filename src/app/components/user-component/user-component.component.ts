@@ -33,25 +33,6 @@ userName:string="";
     this.router.navigate(['mypage'],{relativeTo:this.activatedRoute});
 
   }
-//
-//   mypage(){
-//         this.router.navigate(['mypage'],{relativeTo:this.activatedRoute});
-//   }
-//   addFunds(){
-//     this.router.navigate(['addFunds'],{relativeTo:this.activatedRoute});
-// }
-//   fundTransfer(){
-//     this.router.navigate(['fundTransfer'],{relativeTo:this.activatedRoute});
-//   }
-//   deleteWallet(){
-//     this.router.navigate(['deleteWallet'],{relativeTo:this.activatedRoute});
-//   }
-//   updateWallet(){
-//     this.router.navigate(['updateWallet'],{relativeTo:this.activatedRoute});
-//   }
-//   withDraw(){
-//     this.router.navigate(['withDraw'],{relativeTo:this.activatedRoute});
-//   }
   logout(){
     if(window.confirm("Aru you Sure that You Want to LOGOUT...!")) {
       sessionStorage.clear();
