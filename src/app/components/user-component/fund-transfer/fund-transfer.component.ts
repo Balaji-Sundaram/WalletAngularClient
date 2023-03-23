@@ -36,7 +36,7 @@ pin:number=0;
         next:(data)=>{console.log(data);},
         error:(error)=>{
          let index = JSON.stringify(error).indexOf("error");
-         window.alert(JSON.stringify(error).slice(index+8,-2))
+         window.alert(JSON.stringify(error).slice(index+8, -2));
           console.log(JSON.stringify(error));
           },
         complete:()=>{

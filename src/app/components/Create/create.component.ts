@@ -30,7 +30,8 @@ export class CreateComponent {
         next:(data)=>{
           console.log(data);
        if(data.length==0){
-            if(this.wallet.id != null &&this.wallet.name != null && this.wallet.eMail != null && this.wallet.password != null && this.wallet.fundTransferPin != null && this.wallet.password.length==8 && this.wallet.createdDate !=null)  {
+            // @ts-ignore
+         if(this.wallet.id.toString().length==6 && this.wallet.id != null &&this.wallet.name != null && this.wallet.eMail != null && this.wallet.password != null && this.wallet.fundTransferPin != null && this.wallet.password.length==8 && this.wallet.createdDate !=null)  {
            let walletPost: Observable<any> = this.walletdbservice.addWallet(this.wallet);   // if you want to subscribe the wallet you can add that
            walletPost.subscribe(
              {
@@ -50,8 +51,8 @@ export class CreateComponent {
            )
          }
 
-         else {
-           window.alert("Check the Entered Values  \n it not be Null \n Password Must Contain 8 char not more and not less\n  Id must contain 6 digits")
+         else  {
+           window.alert("Check the Entered Values  \n ID not be Null \n ID must contain only 6 Digits\nPassword Must Contain Exact 8 character Includes Uppercase,LowerCase, Number")
          }
 
        }

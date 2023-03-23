@@ -36,7 +36,7 @@ export class WithDrawComponent implements OnInit{
           },
           error: (error) => {
             let index = JSON.stringify(error).indexOf("error");
-            window.alert(JSON.stringify(error).slice(index+8,-2))
+            window.alert(JSON.stringify(error).slice(index+8,-20))
             console.log(JSON.stringify(error));
           },
           complete: () => {
